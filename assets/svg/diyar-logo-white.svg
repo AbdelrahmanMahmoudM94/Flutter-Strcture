@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100.254" height="74.658" viewBox="0 0 100.254 74.658">
+  <defs>
+    <filter id="Path_5" x="0.685" y="0" width="99.57" height="74.658" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <path id="Path_8" data-name="Path 8" d="M106.173,0V25.17a5.727,5.727,0,0,1-5.692,5.713h0a5.732,5.732,0,0,1-5.713-5.713V0H87.562V13.528a12.737,12.737,0,0,0-6.028-1.489v7.617a5.6,5.6,0,1,1,0,11.191v7.608a13.015,13.015,0,0,0,9.581-4.2,12.879,12.879,0,0,0,9.366,4.064h0a12.9,12.9,0,0,0,9.4-4.1,13.037,13.037,0,0,0,9.621,4.24,13.194,13.194,0,0,0,13.056-11.9H124.9a5.609,5.609,0,1,1-.137-3.083H132.5a13.194,13.194,0,0,0-13-11.44,12.947,12.947,0,0,0-6.12,1.53V0ZM81.534,12.036h0a13.213,13.213,0,0,0,0,26.425h0V30.852h0a5.6,5.6,0,1,1,0-11.191h0Z" transform="translate(-68.42)" fill="#b9e5fb"/>
+    </clipPath>
+  </defs>
+  <g id="Group_5104" data-name="Group 5104" transform="translate(-271.53 -0.91)">
+    <g id="Component_8_9" data-name="Component 8 – 9" transform="translate(271.53 12.32)">
+      <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1" data-name="Layer 1">
+          <g transform="matrix(1, 0, 0, 1, 0, -11.41)" filter="url(#Path_5)">
+            <path id="Path_5-2" data-name="Path 5" d="M113.431,9.61V34.9a5.731,5.731,0,0,1-5.674,5.752h0a5.723,5.723,0,0,1-5.634-5.752V9.61H94.977V23.2a12.8,12.8,0,0,0-5.97-1.489v7.651a5.626,5.626,0,0,1,0,11.248v7.657a12.782,12.782,0,0,0,9.483-4.22,12.674,12.674,0,0,0,9.263,4.082h0a12.709,12.709,0,0,0,9.346-4.122,12.873,12.873,0,0,0,9.541,4.259A13.16,13.16,0,0,0,139.58,36.308h-7.594a5.5,5.5,0,0,1-10.858-1.313,5.5,5.5,0,0,1,10.739-1.787h7.662a13.142,13.142,0,0,0-12.879-11.5,12.668,12.668,0,0,0-6.066,1.55V9.61Zm-24.424,12.1h0a13.284,13.284,0,0,0,0,26.563h0v-7.66h0a5.626,5.626,0,0,1,0-11.248h0Z" transform="translate(-60.33 3.39)" fill="#00aeef"/>
+          </g>
+          <path id="Path_6" data-name="Path 6" d="M106.173,0V25.17a5.727,5.727,0,0,1-5.692,5.713h0a5.732,5.732,0,0,1-5.713-5.713V0H87.562V13.528a12.737,12.737,0,0,0-6.028-1.489v7.617a5.6,5.6,0,1,1,0,11.191v7.608a13.015,13.015,0,0,0,9.581-4.2,12.879,12.879,0,0,0,9.366,4.064h0a12.9,12.9,0,0,0,9.4-4.1,13.037,13.037,0,0,0,9.621,4.24,13.194,13.194,0,0,0,13.056-11.9H124.9a5.609,5.609,0,1,1-.137-3.083H132.5a13.194,13.194,0,0,0-13-11.44,12.947,12.947,0,0,0-6.12,1.53V0ZM81.534,12.036h0a13.213,13.213,0,0,0,0,26.425h0V30.852h0a5.6,5.6,0,1,1,0-11.191h0Z" transform="translate(-53.991)" fill="#b9e5fb"/>
+          <g id="Group_8" data-name="Group 8" transform="translate(14.429)" clip-path="url(#clip-path)">
+            <path id="Path_7" data-name="Path 7" d="M124.263,104.8l-14.451,8.089-13.763,1.492H90.4l-20.379.334-11.781-6.949L56.9,120.683l5.164,8.011,15.352,3.69,23.363-.844,17.69-2,11.682-8.7Z" transform="translate(-58.806 -87.464)" fill="#6dcff6"/>
+          </g>
+          <text id="Diyar_United_Company" data-name="Diyar United Company" transform="translate(0 51.986)" fill="#fff" font-size="9" font-family="Arial" font-weight="700"><tspan x="0" y="0">Diyar United Company</tspan></text>
+          <text id="PARTNERS_IN_TECHNOLOGY" data-name="PARTNERS IN TECHNOLOGY" transform="translate(0.376 61.682)" fill="#fff" font-size="6" font-family="Arial" letter-spacing="0.03em"><tspan x="0" y="0">P</tspan><tspan y="0" letter-spacing="0.1em">A</tspan><tspan y="0" letter-spacing="0.08em">R</tspan><tspan y="0" letter-spacing="0.1em">TNERS IN TECHNOLOG</tspan><tspan y="0" letter-spacing="0.08em">Y</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,192 @@
+name: flutter_structure
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+   # state mangament
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
+  provider: ^6.1.2
+
+  # tools
+  file_picker: ^8.1.3
+  url_launcher: ^6.3.0
+  share_plus: ^10.0.2
+  path_provider: ^2.1.4
+  flutter_pdfview: ^1.3.3
+  cached_network_image: ^3.4.1
+  image_picker: ^1.1.2
+
+  # network
+  dio: ^5.7.0
+  pretty_dio_logger: ^1.3.1
+  flutter_pretty_dio_logger: ^3.0.0
+  dart_ping: ^9.0.1
+  dart_ping_ios: ^4.0.2
+  connectivity_plus: ^6.1.0
+
+  # speech to text
+  speech_to_text: ^7.0.0
+  # ui & theme
+  flutter_screenutil: ^5.9.3
+  cupertino_icons: ^1.0.6
+  flutter_svg: ^2.0.10+1
+  font_awesome_flutter: ^10.7.0
+  carousel_slider_plus: ^7.0.1
+  super_tooltip: ^2.0.8
+  toggle_switch: ^2.3.0
+  expandable_page_view: ^1.0.17
+  expandable: ^5.0.1
+  flutter_launcher_icons: ^0.14.1
+  flutter_easyloading: ^3.0.5
+  skeletonizer: ^1.4.2
+  awesome_snackbar_content:
+    git:
+      url: https://github.com/AbdelrahmanMahmoudM94/awesome_snackbar_content
+      ref: main
+
+  # injectable
+  injectable: ^2.5.0
+  get_it: ^8.0.0
+
+  # localization
+  easy_localization: ^3.0.7
+
+  # navigation
+  auto_route: ^9.2.2
+
+  # google map & location
+  google_maps_flutter: ^2.9.0
+  geolocator: ^13.0.1
+  flutter_polyline_points: ^2.1.0
+  location: ^7.0.1
+  # serialization
+  equatable: ^2.0.5
+  json_annotation: ^4.9.0
+  jwt_decoder: ^2.0.1
+
+  flutter_native_splash: ^2.4.1
+
+  # form builder
+  flutter_form_builder: ^9.4.1
+  form_builder_validators: ^11.0.0
+  flutter_rating_bar:
+    git:
+      url: https://github.com/AbdelrahmanMahmoudM94/flutter_rating_bar.git
+      ref: main
+
+  dropdown_button2: ^2.3.9
+  # storage
+  shared_preferences: ^2.3.2
+
+  # other
+  dartz: ^0.10.1
+  logger: ^2.4.0
+
+  # webview
+  webview_flutter: ^4.10.0
+
+  # localization
+  intl: ^0.19.0
+
+  # permission
+  permission_handler: ^11.3.1
+
+  # hardwere
+  flutter_keyboard_visibility: ^6.0.0
+  flutter_contacts: ^1.1.9+2
+
+  # firebase services
+  firebase_core: ^3.6.0
+  firebase_messaging: ^15.1.3
+  firebase_crashlytics: ^4.1.3
+  firebase_analytics: ^11.3.3
+  flutter_local_notifications: ^17.2.4
+
+  # QR code
+  qr_flutter: ^4.1.0
+
+  # ai
+  flutter_gemini: ^2.0.5
+  # Huawei
+  #huawei_map:
+  #  path: huawei_map
+
+dev_dependencies:
+  flutter_flavor: ^3.1.3
+  auto_route_generator: ^9.0.0
+  build_runner: ^2.4.13
+  json_serializable: ^6.8.0
+  injectable_generator: ^2.6.2
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/
+    - assets/json/
+    - assets/pdf/
+    - assets/svg/
+    - assets/png/
+    - assets/translations/
+    - assets/public/
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/OpenSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/OpenSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/OpenSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/OpenSans-Bold.ttf
+          weight: 700
+
+    - family: FascinateInline
+      fonts:
+        - asset: assets/fonts/FascinateInline-Regular.ttf
+          weight: 400

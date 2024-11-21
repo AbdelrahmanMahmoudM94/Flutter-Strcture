@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="34" viewBox="0 0 37 34">
+  <g id="Group_4989" data-name="Group 4989" transform="translate(-168 -15.743)">
+    <g id="Group_5206" data-name="Group 5206">
+      <rect id="Rectangle_1784" data-name="Rectangle 1784" width="37" height="34" transform="translate(168 15.743)" fill="#fff" opacity="0"/>
+      <g id="Component_1_3" data-name="Component 1 – 3" transform="translate(170 19.743)">
+        <g id="Group_4522" data-name="Group 4522" transform="translate(0)">
+          <g id="Icon_feather-camera" data-name="Icon feather-camera">
+            <path id="Path_146" data-name="Path 146" d="M34.076,27.8a2.937,2.937,0,0,1-2.961,2.912H4.461A2.937,2.937,0,0,1,1.5,27.8V11.78A2.937,2.937,0,0,1,4.461,8.868h5.923L13.346,4.5H22.23l2.961,4.368h5.923a2.937,2.937,0,0,1,2.961,2.912Z" transform="translate(-1.5 -4.5)" fill="none" stroke="#ababab" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/>
+          </g>
+          <path id="Icon_awesome-qrcode" data-name="Icon awesome-qrcode" d="M0,7.8H5.553V2.25H0ZM1.851,4.1H3.7V5.952H1.851ZM7.4,2.25V7.8h5.553V2.25Zm3.7,3.7H9.256V4.1h1.851ZM0,15.208H5.553V9.654H0Zm1.851-3.7H3.7v1.851H1.851ZM12.032,9.654h.926v3.7H10.181v-.926H9.256v2.777H7.4V9.654h2.777v.926h1.851Zm0,4.628h.926v.926h-.926Zm-1.851,0h.926v.926h-.926Z" transform="translate(9.809 6.163)" fill="#ababab"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
