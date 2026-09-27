@@ -40,7 +40,7 @@ class FirebaseMessagingService {
             ));
 
     await _localNotificationsPlugin.initialize(
-      initializationSettings,
+   settings:    initializationSettings,
       onDidReceiveNotificationResponse: _onReceiveNotification,
       onDidReceiveBackgroundNotificationResponse: _notificationTapBackground,
     );
@@ -99,7 +99,7 @@ class FirebaseMessagingService {
         ));
 
     await _localNotificationsPlugin.show(
-        0, notification.title, notification.body, platformChannelSpecifics,
+        id:0, title:  notification.title,body:  notification.body,notificationDetails:  platformChannelSpecifics,
         payload: 'item x');
   }
 

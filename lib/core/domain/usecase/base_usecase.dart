@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../../error/failure.dart';
+import '../../network/error/failure.dart';
 
 class NoParams extends Equatable {
   @override

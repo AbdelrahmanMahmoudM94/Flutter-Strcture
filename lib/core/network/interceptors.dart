@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:dart_ping/dart_ping.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
@@ -21,7 +20,6 @@ class AuthInterceptor extends Interceptor {
     DioException err,
     ErrorInterceptorHandler handler,
   ) async {
-    final PingData resultPing = await Ping('google.com', count: 1).stream.first;
 
     List<ConnectivityResult> result = await Connectivity().checkConnectivity();
     if (err.type == DioExceptionType.connectionTimeout ||
@@ -33,8 +31,7 @@ class AuthInterceptor extends Interceptor {
       ViewsToolbox.dismissLoading();
       handler.reject(err);
       return;
-    } else if (result.first != ConnectivityResult.none &&
-        resultPing.response?.ttl == null) {
+    } else if (result.first != ConnectivityResult.none) {
       ViewsToolbox.dismissLoading();
       handler.reject(err);
       return;

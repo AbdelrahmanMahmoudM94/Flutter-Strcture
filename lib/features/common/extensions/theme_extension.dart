@@ -1,4 +1,4 @@
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 /// A collection of convenience methods to access theme from a [BuildContext]
 extension ThemeExtension on BuildContext {

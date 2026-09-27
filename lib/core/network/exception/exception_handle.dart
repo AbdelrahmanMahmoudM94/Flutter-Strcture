@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -9,18 +10,40 @@ import '../../../features/routes/routes.dart';
 import 'error_status.dart';
 
 class ExceptionHandle {
-  static String globalError =
-      getIt<AppRouter>().navigatorKey.currentContext!.tr("general-error");
+  static String globalError = getIt<AppRouter>().navigatorKey.currentContext!
+      .tr("general-error");
+  static String forbidden = getIt<AppRouter>().navigatorKey.currentContext!.tr(
+    "noPermissionFile",
+  );
 
-  static NetError handleException(dynamic error) {
+  static NetError handleException(
+    dynamic error, {
+    bool? handleCustomError = false,
+  }) {
     ViewsToolbox.dismissLoading();
 
     if (error is DioException) {
       if (error.type == DioExceptionType.unknown ||
-          error.type == DioExceptionType.badResponse) {
+          error.type == DioExceptionType.badResponse &&
+              error.response?.statusCode != 403) {
         final dynamic e = error.error;
 
         ///网络异常
+        ///
+        ///
+        if (handleCustomError!) {
+          final dynamic data = error.response?.data;
+          final String message;
+          if (data is Map<String, dynamic>) {
+            message = jsonEncode(data);
+          } else if (data is String && data.isNotEmpty) {
+            message = data;
+          } else {
+            message = globalError;
+          }
+          return NetError(ErrorStatus.UNKNOWN_ERROR, message);
+        }
+
         if (e is SocketException) {
           return NetError(ErrorStatus.SOCKET_ERROR, globalError);
         }
@@ -43,6 +66,8 @@ class ExceptionHandle {
         return NetError(ErrorStatus.CANCEL_ERROR, "");
 
         //其他异常
+      } else if (error.response?.statusCode == 403) {
+        return NetError(ErrorStatus.FORBIDDEN, forbidden);
       } else {
         return NetError(ErrorStatus.UNKNOWN_ERROR, globalError);
       }

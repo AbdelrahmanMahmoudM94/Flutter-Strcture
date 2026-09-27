@@ -28,7 +28,7 @@ class CustomDropDownField<T> extends StatefulWidget {
   final String keyName;
   final T? initialValue;
   final String labelText;
-  final List<DropdownMenuItem<T>> items;
+  final List<DropdownItem<T>> items;
   final List<Map<String, T>>? itemsSearchable;
   final String? Function(T?)? validator;
   final String? labelAboveField;
@@ -44,12 +44,13 @@ class CustomDropDownField<T> extends StatefulWidget {
 }
 
 class _CustomDropDownFieldState<T> extends State<CustomDropDownField<T>> {
-  T? selectedInialValue;
+  late final ValueNotifier<T?> selectedInialValue;
   final TextEditingController textEditingController = TextEditingController();
   // final GlobalKey<DropdownButton2State> dropDownKey =
   //     GlobalKey<DropdownButton2State>();
   @override
   void dispose() {
+    selectedInialValue.dispose();
     textEditingController.dispose();
     super.dispose();
   }
@@ -57,7 +58,7 @@ class _CustomDropDownFieldState<T> extends State<CustomDropDownField<T>> {
   @override
   void initState() {
     super.initState();
-    selectedInialValue = widget.initialValue;
+    selectedInialValue = ValueNotifier<T?>(widget.initialValue);
   }
 
   @override
@@ -84,9 +85,7 @@ class _CustomDropDownFieldState<T> extends State<CustomDropDownField<T>> {
                     },
             onChanged: (T? value) {
               //dropDownKey.currentState?.did;
-              setState(() {
-                selectedInialValue = value;
-              });
+              selectedInialValue.value = value;
             },
             autovalidateMode: AutovalidateMode.onUserInteraction,
             enabled: !(widget.disableFiled ?? false),
@@ -127,8 +126,8 @@ class _CustomDropDownFieldState<T> extends State<CustomDropDownField<T>> {
                           ? null
                           : DropdownSearchData<T>(
                               searchController: textEditingController,
-                              searchInnerWidgetHeight: 50,
-                              searchInnerWidget: Container(
+                              searchBarWidgetHeight: 50,
+                              searchBarWidget: Container(
                                 height: 50,
                                 padding: const EdgeInsets.only(
                                   top: 8,
@@ -174,7 +173,7 @@ class _CustomDropDownFieldState<T> extends State<CustomDropDownField<T>> {
                                   ),
                                 ),
                               ),
-                              searchMatchFn: (DropdownMenuItem<T> item,
+                              searchMatchFn: (DropdownItem<T> item,
                                   String searchValue) {
                                 // bool? value = true;
                                 // widget.itemsSearchable!.
@@ -283,7 +282,7 @@ class _CustomDropDownFieldState<T> extends State<CustomDropDownField<T>> {
                         floatingLabelBehavior: FloatingLabelBehavior.never,
                         hintText: widget.labelText,
                       ),
-                      value: selectedInialValue,
+                      valueListenable: selectedInialValue,
                       // validator: widget.validator ??
                       //     (T? value) {
                       //       if (value == null) {

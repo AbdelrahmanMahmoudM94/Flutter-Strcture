@@ -5,7 +5,7 @@ import 'dependency_init.config.dart';
 
 final GetIt getIt = GetIt.instance;
 @InjectableInit(
-  usesNullSafety: true,
+
   initializerName: r'$initGetIt', // default
   asExtension: false, // default
   preferRelativeImports: false,

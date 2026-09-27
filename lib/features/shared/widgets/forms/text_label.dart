@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -150,7 +150,7 @@ class _TextLabelState extends State<TextLabel> {
             decoration: InputDecoration(
               isDense: true,
               suffixText: widget.suffixText,
-              border: InputBorder.none,
+              border:InputBorder.none,
               contentPadding: EdgeInsets.symmetric(
                 vertical: widget.height == null ? 0 : (widget.height! / 4),
                 horizontal: 17.w,

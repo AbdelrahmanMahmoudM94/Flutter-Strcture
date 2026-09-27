@@ -12,12 +12,19 @@ class FilePickerCubit extends Cubit<List<XFile>> {
     List<String> allowedExtensions = const <String>[],
     bool allowMultiple = false,
   }) async {
-    final FilePickerResult? pickedImage = await FilePicker.platform.pickFiles(
+    if (allowMultiple) {
+      final List<PlatformFile> pickedFiles = await FilePicker.pickFiles(
+        type: filetype,
+        allowedExtensions: allowedExtensions,
+      );
+      emit(pickedFiles.map((PlatformFile file) => file.xFile).toList());
+      return;
+    }
+    final PlatformFile? pickedFile = await FilePicker.pickFile(
       type: filetype,
       allowedExtensions: allowedExtensions,
-      allowMultiple: allowMultiple,
     );
-    emit(pickedImage?.xFiles ?? <XFile>[]);
+    emit(pickedFile == null ? <XFile>[] : <XFile>[pickedFile.xFile]);
   }
 
   Future<void> pickCamera({
@@ -27,9 +34,10 @@ class FilePickerCubit extends Cubit<List<XFile>> {
   }) async {
     final XFile? pickedImage =
         await ImagePicker().pickImage(source: ImageSource.camera);
-    if (pickedImage != null)
+    if (pickedImage != null) {
       emit(<XFile>[pickedImage]);
-    else
+    } else {
       emit(<XFile>[]);
+    }
   }
 }

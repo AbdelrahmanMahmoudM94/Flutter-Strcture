@@ -7,7 +7,6 @@ class AppRouter extends RootStackRouter {
   AppRouter();
   @override
   List<AutoRoute> get routes => <AutoRoute>[
-        //------------------- [Visitor Routes] ------------------- //
       
       ];
 }

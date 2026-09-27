@@ -1,34 +1,486 @@
-**/dgph
-*.mode1v3
-*.mode2v3
-*.moved-aside
-*.pbxuser
-*.perspectivev3
-**/*sync/
-.sconsign.dblite
-.tags*
-**/.vagrant/
-**/DerivedData/
-Icon?
-**/Pods/
-**/.symlinks/
-profile
-xcuserdata
-**/.generated/
-Flutter/App.framework
-Flutter/Flutter.framework
-Flutter/Flutter.podspec
-Flutter/Generated.xcconfig
-Flutter/ephemeral/
-Flutter/app.flx
-Flutter/app.zip
-Flutter/flutter_assets/
-Flutter/flutter_export_environment.sh
-ServiceDefinitions.json
-Runner/GeneratedPluginRegistrant.*
+# ============================================================================
 
-# Exceptions to above rules.
-!default.mode1v3
-!default.mode2v3
-!default.pbxuser
-!default.perspectivev3
+# Flutter / Dart .gitignore
+
+# ============================================================================
+
+# Do not remove or rename Flutter repository-specific entries.
+
+# Only add new entries when required.
+
+#
+
+# Flutter reference:
+
+# https://github.com/flutter/flutter/issues/128635
+
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+
+# Miscellaneous
+
+# ----------------------------------------------------------------------------
+
+*.class
+*.log
+*.pyc
+*.swp
+*.swo
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+
+.DS_Store
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+.atom/
+.buildlog/
+.history/
+.svn/
+.cxx/
+
+# Temporary / diagnostic files
+
+*.pid
+*.pid.lock
+*.seed
+*.stackdump
+*.trace
+
+# ----------------------------------------------------------------------------
+
+# IntelliJ / Android Studio
+
+# ----------------------------------------------------------------------------
+
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Keep shared project configuration if used by the team
+
+!.idea/codeStyles/
+!.idea/runConfigurations/
+
+# ----------------------------------------------------------------------------
+
+# Visual Studio Code
+
+# ----------------------------------------------------------------------------
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# ----------------------------------------------------------------------------
+
+# Eclipse
+
+# ----------------------------------------------------------------------------
+
+.classpath
+.project
+.settings/
+
+# ----------------------------------------------------------------------------
+
+# Flutter repo-specific
+
+# ----------------------------------------------------------------------------
+
+/bin/cache/
+/bin/internal/bootstrap.bat
+/bin/internal/bootstrap.sh
+/bin/mingit/
+/dev/benchmarks/mega_gallery/
+/dev/bots/.recipe_deps
+/dev/bots/android_tools/
+/dev/devicelab/ABresults*.json
+/dev/docs/doc/
+/dev/docs/api_docs.zip
+/dev/docs/flutter.docs.zip
+/dev/docs/lib/
+/dev/docs/pubspec.yaml
+/dev/integration_tests/**/xcuserdata
+/dev/integration_tests/**/Pods
+/packages/flutter/coverage/
+version
+analysis_benchmark.json
+
+# Packages file containing multi-root paths
+
+.packages.generated
+
+# ----------------------------------------------------------------------------
+
+# Dart / Flutter / Pub
+
+# ----------------------------------------------------------------------------
+
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+**/generated_plugin_registrant.dart
+.packages
+.pub-preload-cache/
+.pub-cache/
+.pub/
+build/
+
+# Flutter generated files
+
+flutter_*.png
+linked_*.ds
+unlinked.ds
+unlinked_spec.ds
+
+# Flutter ephemeral files
+
+**/flutter/ephemeral/
+**/Flutter/ephemeral/
+
+# ----------------------------------------------------------------------------
+
+# FVM
+
+# ----------------------------------------------------------------------------
+
+# Keep .fvmrc committed so the team uses the same Flutter version.
+
+.fvm/flutter_sdk
+
+# ----------------------------------------------------------------------------
+
+# Environment / Secrets
+
+# ----------------------------------------------------------------------------
+
+.env
+.env.*
+!.env.example
+!.env.template
+!.env.sample
+
+**/env/.env
+**/env/.env.*
+**/.env
+**/.env.*
+
+# Local configuration
+
+local.properties
+local_config.*
+config.local.*
+*.local
+
+# ----------------------------------------------------------------------------
+
+# Android
+
+# ----------------------------------------------------------------------------
+
+.gradle/
+**/.gradle/
+
+# Gradle wrapper generated files
+
+**/android/**/gradle-wrapper.jar
+
+# Android local configuration
+
+**/android/local.properties
+
+# Android generated files
+
+**/android/**/captures/
+**/android/**/GeneratedPluginRegistrant.java
+**/android/**/build/
+**/android/**/.cxx/
+**/android/**/.externalNativeBuild/
+**/android/**/obj/
+
+# Gradle executables
+
+**/android/gradlew
+**/android/gradlew.bat
+
+# Android signing configuration
+
+**/android/key.properties
+**/android/**/key.properties
+
+# Android signing certificates / keystores
+
+*.jks
+*.keystore
+*.p12
+*.pfx
+
+# Native build output
+
+**/android/**/cmake-build-*/
+
+# ----------------------------------------------------------------------------
+
+# iOS / Xcode
+
+# ----------------------------------------------------------------------------
+
+# Xcode user-specific files
+
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.moved-aside
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/*sync/
+**/ios/**/.sconsign.dblite
+**/ios/**/.tags*
+**/ios/**/.vagrant/
+**/ios/**/xcuserdata/
+**/ios/**/DerivedData/
+
+# General Xcode user data
+
+**/xcuserdata/
+
+# Xcode generated files
+
+**/ios/**/Icon?
+**/ios/.generated/
+**/ios/Flutter/.last_build_id
+
+# Flutter iOS generated files
+
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/ephemeral/
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+
+# Generated plugin registration
+
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# CocoaPods
+
+**/Pods/
+**/ios/Pods/
+
+# Keep Podfile.lock committed
+
+!**/ios/Podfile.lock
+
+# Xcode build output
+
+**/ios/build/
+**/ios/DerivedData/
+
+# Swift Package Manager
+
+**/.swiftpm/
+**/ios/.swiftpm/
+
+# Xcode archives
+
+*.xcarchive
+*.dSYM
+*.dSYM.zip
+
+# iOS signing / provisioning
+
+*.mobileprovision
+*.provisionprofile
+*.cer
+*.p12
+
+# Generated service definitions
+
+**/ios/ServiceDefinitions.json
+
+# ----------------------------------------------------------------------------
+
+# macOS
+
+# ----------------------------------------------------------------------------
+
+**/macos/Flutter/GeneratedPluginRegistrant.swift
+**/macos/Flutter/ephemeral/
+**/macos/Pods/
+**/macos/DerivedData/
+**/macos/xcuserdata/
+**/macos/build/
+
+# ----------------------------------------------------------------------------
+
+# Windows
+
+# ----------------------------------------------------------------------------
+
+**/windows/flutter/ephemeral/
+**/windows/flutter/generated_plugin_registrant.cc
+**/windows/flutter/generated_plugin_registrant.h
+**/windows/flutter/generated_plugins.cmake
+**/windows/build/
+
+# ----------------------------------------------------------------------------
+
+# Linux
+
+# ----------------------------------------------------------------------------
+
+**/linux/flutter/ephemeral/
+**/linux/flutter/generated_plugin_registrant.cc
+**/linux/flutter/generated_plugin_registrant.h
+**/linux/flutter/generated_plugins.cmake
+**/linux/build/
+
+# ----------------------------------------------------------------------------
+
+# Web
+
+# ----------------------------------------------------------------------------
+
+**/web/build/
+**/web/.dart_tool/
+
+# ----------------------------------------------------------------------------
+
+# Coverage
+
+# ----------------------------------------------------------------------------
+
+coverage/
+**/coverage/
+*.lcov
+
+# ----------------------------------------------------------------------------
+
+# Build Artifacts
+
+# ----------------------------------------------------------------------------
+
+*.apk
+*.aab
+*.ipa
+*.app
+*.app.dSYM
+*.app.dSYM.zip
+
+# Android mapping / symbols
+
+mapping.txt
+**/mapping.txt
+
+# Flutter symbols
+
+app.*.symbols
+*.symbols
+
+# ----------------------------------------------------------------------------
+
+# Firebase / Crashlytics
+
+# ----------------------------------------------------------------------------
+
+firebase-debug.log
+firebase-debug.*.log
+crashlytics-build.properties
+
+# ----------------------------------------------------------------------------
+
+# Fastlane
+
+# ----------------------------------------------------------------------------
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Fastlane configuration files such as Fastfile, Appfile,
+
+# Matchfile and Deliverfile should remain tracked.
+
+# ----------------------------------------------------------------------------
+
+# Melos
+
+# ----------------------------------------------------------------------------
+
+.melos/
+.melos_tool/
+
+# ----------------------------------------------------------------------------
+
+# Mason
+
+# ----------------------------------------------------------------------------
+
+.mason/
+.mason_cache/
+
+# ----------------------------------------------------------------------------
+
+# Ruby / Bundler
+
+# ----------------------------------------------------------------------------
+
+.bundle/
+vendor/bundle/
+
+# ----------------------------------------------------------------------------
+
+# Generated Documentation
+
+# ----------------------------------------------------------------------------
+
+doc/api/
+docs/build/
+
+# ----------------------------------------------------------------------------
+
+# Exceptions to Flutter defaults
+
+# ----------------------------------------------------------------------------
+
+!**/ios/**/default.mode1v3
+!**/ios/**/default.mode2v3
+!**/ios/**/default.pbxuser
+!**/ios/**/default.perspectivev3
+
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+!/dev/ci/**/Gemfile.lock
+
+# Keep shared VS Code configuration
+
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Keep environment templates
+
+!.env.example
+!.env.template
+!.env.sample
+
+# Keep Flutter dependency lock file
+
+!pubspec.lock
+
+# Keep iOS dependency lock file
+
+!**/ios/Podfile.lock
