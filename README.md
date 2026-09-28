@@ -6,11 +6,14 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## TO Build Runner 
+1- dart run build_runner build --delete-conflicting-outputs 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## To Clean 
+2- flutter clean && flutter pub get && cd ios && pod install 
+&& cd ../
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## To Build Ios 
+
+flutter clean && flutter pub get && flutter build ipa --export-options-plist=exportOptions.plist
