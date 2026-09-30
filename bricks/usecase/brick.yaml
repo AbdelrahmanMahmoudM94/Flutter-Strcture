@@ -1,0 +1,34 @@
+name: usecase
+
+description: Generate a Flutter UseCase.
+
+version: 0.1.0+1
+
+environment:
+  mason: ^0.1.3
+
+vars:
+  usecaseName:
+    type: string
+    description: Use case name
+    default: UseCase
+    prompt: What is the use case name?
+
+  typeName:
+    type: string
+    description: Return type name
+    default: Entity
+    prompt: What is the receive type name?
+
+  repoName:
+    type: string
+    description: Repository name
+    default: Repository
+    prompt: What is the repository name?
+
+
+  functionName:
+    type: string
+    description: Repository function name
+    default: execute
+    prompt: What is the function name?

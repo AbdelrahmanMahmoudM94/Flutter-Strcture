@@ -3,5 +3,15 @@ bricks:
   feature:
      path: bricks/feature
     
-      
+  usecase:
+     path: bricks/usecase
+
+  entity:
+     path: bricks/entity
+
+  reqmodel:
+     path: bricks/request_model
+
+  respmodel:
+     path: bricks/response_model     
   
