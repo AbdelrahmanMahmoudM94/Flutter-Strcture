@@ -28,7 +28,7 @@ class MasterWidget extends StatefulWidget {
     this.appBar,
     this.showActionsIcon = true,
     this.showLeading = true,
-    this.floatingActionButton,
+    this.floatingActionButton, screenTitleStyle,   
   });
 
   final Widget? floatingActionButton;

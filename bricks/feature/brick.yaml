@@ -1,0 +1,12 @@
+
+version: 0.1.0+1
+environment:
+  mason: ^0.1.3
+name: feature
+description: A feature brick that provides a template for creating new features in your application.
+vars:
+  name:
+    type: string
+    description: The name of the feature to be created.
+    default: NewFeature
+
