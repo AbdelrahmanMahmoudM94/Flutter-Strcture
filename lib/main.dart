@@ -1,17 +1,18 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_structure/features/common/error_handling/fatal_error_handler.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_builder_validators/localization/l10n.dart';
 import 'package:get_it/get_it.dart';
- 
+
 import 'features/common/utility/theme.dart';
 import 'features/di/dependency_init.dart';
 import 'features/di/toggle_button_model.dart';
- import 'features/routes/router_observer.dart';
+import 'features/routes/router_observer.dart';
 import 'features/routes/routes.dart';
 import 'features/shared/cubit/locale_cubit/locale_cubit.dart';
 import 'features/shared/cubit/theme_cubit/theme_cubit.dart';
@@ -20,25 +21,19 @@ import 'features/shared/widgets/custom_toggle_button/custom_toggle_button_cubit.
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
- 
+
   // await Firebase.initializeApp(
   //   name: "Swa",
   //   options: DefaultFirebaseOptions.currentPlatform,
   // );
   // FirebaseMessagingService().init();
-  FlutterError.onError = (FlutterErrorDetails errorDetails) {
-    FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
-  };
-  PlatformDispatcher.instance.onError = (Object error, StackTrace stack) {
-    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
-    return true;
-  };
+  FatalErrorHandler.initialize();
   getIt.registerSingleton<AppRouter>(AppRouter());
 
   // FlutterNativeSplash.preserve(
   //     widgetsBinding: WidgetsFlutterBinding.ensureInitialized());
   await configureDependencies();
-  LocaleCubit _localCubit = getIt<LocaleCubit>();
+  LocaleCubit localCubit = getIt<LocaleCubit>();
   setupDI(); // Set up the DI
   await GetIt.I.isReady<ToggleModel>();
   //NotificationCubit _notificationCubit = getIt<NotificationCubit>();
@@ -55,7 +50,7 @@ void main() async {
         Locale('en', 'US'),
       ],
 
-      startLocale: _localCubit.getCurrentLocale(),
+      startLocale: localCubit.getCurrentLocale(),
       saveLocale: false,
       // locale: const Locale('ar', 'KW'),
       fallbackLocale: const Locale('ar', 'KW'),
