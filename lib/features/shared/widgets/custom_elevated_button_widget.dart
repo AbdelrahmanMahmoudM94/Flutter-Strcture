@@ -121,11 +121,11 @@ class _CustomElevatedButtonState extends State<CustomElevatedButton> {
                 style: widget.textStyle,
                 textColor: widget.textColor ??
                     (widget.backgroundColor != null &&
-                            widget.backgroundColor != Palette.transparntColor
+                            widget.backgroundColor != Palette.transparentColor
                         ? Palette.white
                         : AppTheme.inDarkMode(context,
                             light: widget.backgroundColor ==
-                                    Palette.transparntColor
+                                    Palette.transparentColor
                                 ? Palette.black
                                 : Palette.white,
                             dark: Palette.white)),

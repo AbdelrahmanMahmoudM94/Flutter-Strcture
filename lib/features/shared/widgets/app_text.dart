@@ -1,9 +1,9 @@
-import 'package:easy_localization/easy_localization.dart';
-import 'package:material_ui/material_ui.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_structure/features/common/utility/palette.dart';
 import 'package:flutter_structure/features/common/utility/theme.dart';
- 
+import 'package:material_ui/material_ui.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../common/helper/language_helper.dart';
 
 enum AppFontWeight { bold, normal, medium }
@@ -28,6 +28,9 @@ class AppText extends StatelessWidget {
     this.lineHeight,
     this.substringForDots,
     this.displayToolTip = false,
+    this.toolTipTriggerMode,
+    this.fontFamily,
+    this.decoration,
   });
   final TextAlign? textAlign;
   final TextDirection? textDirection;
@@ -47,25 +50,35 @@ class AppText extends StatelessWidget {
   final double? lineHeight;
   final AppTextStyle? style;
   final bool? displayToolTip;
+  final TooltipTriggerMode? toolTipTriggerMode;
+  final String? fontFamily;
+  final TextDecoration? decoration;
 
   @override
   Widget build(BuildContext context) {
     return displayToolTip!
         ? Tooltip(
             message: text ?? (LanguageHelper.isAr(context) ? textAr : textEn),
-            triggerMode: TooltipTriggerMode.tap,
+            triggerMode: toolTipTriggerMode ?? TooltipTriggerMode.tap,
             child: Text(
               _handleText(context: context),
-              style: _handleCustomStyle(context),
+              style: handleCustomStyle(
+                context,
+              ).copyWith(fontFamily: fontFamily, decoration: decoration),
               maxLines: maxLines,
-              overflow: overflow,
+              overflow: overflow ?? TextOverflow.ellipsis,
               softWrap: softWrap,
               textAlign: textAlign,
             ),
           )
         : Text(
             _handleText(context: context),
-            style: _handleCustomStyle(context),
+            // textHeightBehavior:
+            //     TextHeightBehavior(applyHeightToFirstAscent: true),
+            // strutStyle: StrutStyle(forceStrutHeight: false),
+            style: handleCustomStyle(
+              context,
+            ).copyWith(fontFamily: fontFamily, decoration: decoration),
             maxLines: maxLines,
             overflow: overflow,
             softWrap: softWrap,
@@ -73,8 +86,121 @@ class AppText extends StatelessWidget {
           );
   }
 
-  TextStyle _handleCustomStyle(BuildContext context) {
+  TextStyle handleCustomStyle(BuildContext context) {
     switch (style) {
+      case AppTextStyle.light_10:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 10.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_11:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 11.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_12:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 12.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_13:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 13.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_14:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 14.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_15:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 15.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_16:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 16.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_17:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 17.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_18:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 18.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_19:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 19.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_20:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 20.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_21:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 21.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_24:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 24.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_28:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 28.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_36:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 36.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.light_48:
+        return TextStyle(
+          fontWeight: FontWeight.w300,
+          fontSize: 48.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+
       case AppTextStyle.regular_10:
         return TextStyle(
           fontWeight: FontWeight.w400,
@@ -385,6 +511,20 @@ class AppText extends StatelessWidget {
           color: textColor,
           height: lineHeight,
         );
+      case AppTextStyle.semiBold_22:
+        return TextStyle(
+          fontWeight: FontWeight.w600,
+          fontSize: 22.sp,
+          color: textColor,
+          height: lineHeight,
+        );
+      case AppTextStyle.semiBold_23:
+        return TextStyle(
+          fontWeight: FontWeight.w600,
+          fontSize: 23.sp,
+          color: textColor,
+          height: lineHeight,
+        );
       case AppTextStyle.semiBold_24:
         return TextStyle(
           fontWeight: FontWeight.w600,
@@ -543,17 +683,19 @@ class AppText extends StatelessWidget {
 
       default:
         return TextStyle(
-            fontWeight: FontWeight.w400,
-            fontSize: fontSize?.sp ?? 16.sp,
-            color: textColor ??
-                AppTheme.inDarkMode(context,
-                    light: Palette.black, dark: Palette.white));
+          fontWeight: FontWeight.w400,
+          fontSize: fontSize?.sp ?? 16.sp,
+          color: textColor ??
+              AppTheme.inDarkMode(
+                context,
+                light: Palette.black,
+                dark: Palette.white,
+              ),
+        );
     }
   }
 
-  String _handleText({
-    required BuildContext context,
-  }) {
+  String _handleText({required BuildContext context}) {
     if (text != null) {
       if (textLimit != null) {
         if (text!.trim().length > textLimit!) {
@@ -612,6 +754,22 @@ class AppText extends StatelessWidget {
 }
 
 enum AppTextStyle {
+  light_10,
+  light_11,
+  light_12,
+  light_13,
+  light_14,
+  light_15,
+  light_16,
+  light_17,
+  light_18,
+  light_19,
+  light_20,
+  light_21,
+  light_24,
+  light_28,
+  light_36,
+  light_48,
   regular_10,
   regular_11,
   regular_12,

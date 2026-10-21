@@ -629,7 +629,7 @@ class ViewsToolbox {
               : Palette.darkGray
       ..maskColor =
           AppTheme.isDarkMode(getIt<AppRouter>().navigatorKey.currentContext!)
-              ? Palette.transparntColor
+              ? Palette.transparentColor
               : Palette.darkGray
       ..indicatorColor =
           AppTheme.isDarkMode(getIt<AppRouter>().navigatorKey.currentContext!)

@@ -27,6 +27,12 @@ import 'package:flutter_structure/features/shared/widgets/custom_map_picker/cust
     as _i132;
 import 'package:flutter_structure/features/shared/widgets/pdf_bottomsheet_widget/pdf_cubit.dart'
     as _i799;
+import 'package:flutter_structure/features/splash/data/data_sources/remote/splash_remote_data_sources.dart'
+    as _i508;
+import 'package:flutter_structure/features/splash/data/repositories/splash_repository_imp.dart'
+    as _i198;
+import 'package:flutter_structure/features/splash/domain/repositories/splash_repository.dart'
+    as _i792;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
@@ -61,6 +67,10 @@ Future<_i174.GetIt> $initGetIt(
   gh.lazySingleton<_i361.Dio>(
       () => registerModule.dio(gh<String>(instanceName: 'BaseUrl')));
   gh.factory<_i866.NetworkHelper>(() => _i866.NetworkHelper(gh<_i361.Dio>()));
+  gh.factory<_i508.SplashRemoteDataSource>(
+      () => _i508.SplashRemoteDataSourceImpl(gh<_i866.NetworkHelper>()));
+  gh.factory<_i792.SplashRepository>(() => _i198.SplashRepositoryImp(
+      splashRemoteDataSource: gh<_i508.SplashRemoteDataSource>()));
   return getIt;
 }
 
