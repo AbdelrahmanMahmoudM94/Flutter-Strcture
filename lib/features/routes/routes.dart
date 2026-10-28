@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_structure/features/routes/routes.gr.dart';
- import 'package:flutter_structure/features/shared/navigations/app_routes_constants.dart';
+ import 'package:flutter_structure/features/routes/app_routes_constants.dart';
 
  
  
