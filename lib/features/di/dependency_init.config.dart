@@ -21,8 +21,6 @@ import 'package:flutter_structure/features/shared/widgets/custom_check_box/check
     as _i601;
 import 'package:flutter_structure/features/shared/widgets/custom_date_picker/custom_date_picker_cubit.dart'
     as _i42;
-import 'package:flutter_structure/features/shared/widgets/custom_file_picker/custom_file_picker_cubit.dart'
-    as _i804;
 import 'package:flutter_structure/features/shared/widgets/custom_map_picker/custom_map_picker_cubit.dart'
     as _i132;
 import 'package:flutter_structure/features/shared/widgets/pdf_bottomsheet_widget/pdf_cubit.dart'
@@ -52,7 +50,6 @@ Future<_i174.GetIt> $initGetIt(
   gh.factory<_i1030.LocaleCubit>(() => _i1030.LocaleCubit());
   gh.factory<_i347.ThemeCubit>(() => _i347.ThemeCubit());
   gh.factory<_i42.DatePickerCubit>(() => _i42.DatePickerCubit());
-  gh.factory<_i804.FilePickerCubit>(() => _i804.FilePickerCubit());
   gh.factory<_i132.LocationCubit>(() => _i132.LocationCubit());
   gh.factory<_i799.PDFCubit>(() => _i799.PDFCubit());
   await gh.singletonAsync<_i460.SharedPreferences>(
